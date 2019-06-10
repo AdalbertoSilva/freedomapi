@@ -22,7 +22,6 @@ namespace FreedomApi.Data
         public virtual DbSet<CharacterStatus> CharacterStatus { get; set; }
         public virtual DbSet<Inventory> Inventory { get; set; }
         public virtual DbSet<Item> Item { get; set; }
-        public virtual DbSet<ItemType> ItemType { get; set; }
         public virtual DbSet<Migrations> Migrations { get; set; }
         public virtual DbSet<Party> Party { get; set; }
         public virtual DbSet<RemarkableTrait> RemarkableTrait { get; set; }
@@ -35,9 +34,8 @@ namespace FreedomApi.Data
         public virtual DbSet<TechniqueLearned> TechniqueLearned { get; set; }
         public virtual DbSet<TechniqueRestriction> TechniqueRestriction { get; set; }
         public virtual DbSet<Techniques> Techniques { get; set; }
-        public virtual DbSet<FreedomApi.Models.Type> Type { get; set; }
-        public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<UserParty> UserParty { get; set; }
+        public virtual DbSet<Player> User { get; set; }
+        public virtual DbSet<PlayerParty> UserParty { get; set; }
 
         // Unable to generate entity type for table 'password_resets'. Please see the warning messages.
 
@@ -46,7 +44,7 @@ namespace FreedomApi.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=127.0.0.1;port=3306;database=freedom;uid=root;password=");
+                optionsBuilder.UseMySQL("server=127.0.0.1;port=3306;database=freedom;uid=root;password=");
             }
         }
 
@@ -252,34 +250,6 @@ namespace FreedomApi.Data
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_ITEM_USER1");
-            });
-
-            modelBuilder.Entity<ItemType>(entity =>
-            {
-                entity.HasKey(e => new { e.IdItem, e.IdType })
-                    .HasName("PRIMARY");
-
-                entity.ToTable("item_type");
-
-                entity.HasIndex(e => e.IdItem)
-                    .HasName("fk_ITEM_has_ITEM_TYPE_ITEM1_idx");
-
-                entity.HasIndex(e => e.IdType)
-                    .HasName("fk_ITEM_has_ITEM_TYPE_ITEM_TYPE1_idx");
-
-                entity.Property(e => e.IdItem)
-                    .HasColumnName("id_item")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.IdType)
-                    .HasColumnName("id_type")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.IdTypeNavigation)
-                    .WithMany(p => p.ItemType)
-                    .HasForeignKey(d => d.IdType)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_ITEM_has_ITEM_TYPE_ITEM_TYPE1");
             });
 
             modelBuilder.Entity<Migrations>(entity =>
@@ -629,6 +599,23 @@ namespace FreedomApi.Data
                     .HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<TechniqueEffect>(entity =>
+            {
+                entity.ToTable("type");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasColumnType("varchar(255)");
+
+                entity.Property(e => e.Name)
+                    .HasColumnName("name")
+                    .HasColumnType("varchar(255)");
+            });
+
             modelBuilder.Entity<Techniques>(entity =>
             {
                 entity.HasKey(e => new { e.Id, e.UserId })
@@ -667,8 +654,8 @@ namespace FreedomApi.Data
                     .HasColumnName("duration")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.Effect)
-                    .HasColumnName("effect")
+                entity.Property(e => e.Power)
+                    .HasColumnName("power")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Execution)
@@ -691,6 +678,10 @@ namespace FreedomApi.Data
                     .HasColumnName("updated_at")
                     .HasColumnType("datetime");
 
+                entity.Property(e => e.EffectId)
+                    .HasColumnName("effect_id")
+                    .HasColumnType("int(11)");
+
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Techniques)
                     .HasForeignKey(d => d.UserId)
@@ -698,49 +689,7 @@ namespace FreedomApi.Data
                     .HasConstraintName("fk_TECHNIQUE_USER1");
             });
 
-            modelBuilder.Entity<FreedomApi.Models.Type>(entity =>
-            {
-                entity.ToTable("type");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.Category)
-                    .HasColumnName("category")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasColumnType("varchar(255)");
-            });
-
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.ToTable("user");
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.CreatedOn)
-                    .HasColumnName("created_on")
-                    .HasColumnType("datetime");
-
-                entity.Property(e => e.Email)
-                    .HasColumnName("email")
-                    .HasColumnType("varchar(255)");
-
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasColumnType("varchar(255)");
-
-                entity.Property(e => e.Password)
-                    .HasColumnName("password")
-                    .HasColumnType("varchar(255)");
-            });
-
-            modelBuilder.Entity<UserParty>(entity =>
+            modelBuilder.Entity<PlayerParty>(entity =>
             {
                 entity.HasKey(e => new { e.Id, e.UserId, e.PartyId })
                     .HasName("PRIMARY");

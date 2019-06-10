@@ -8,7 +8,7 @@ namespace FreedomApi.Models
         public Party()
         {
             Character = new HashSet<Character>();
-            UserParty = new HashSet<UserParty>();
+            UserParty = new HashSet<PlayerParty>();
         }
 
         public int Id { get; set; }
@@ -17,6 +17,6 @@ namespace FreedomApi.Models
         public string Description { get; set; }
 
         public virtual ICollection<Character> Character { get; set; }
-        public virtual ICollection<UserParty> UserParty { get; set; }
+        public virtual ICollection<PlayerParty> UserParty { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace FreedomApi.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int? Difficulty { get; set; }
-        public int? Effect { get; set; }
+        public int? Power { get; set; }
         public string Form { get; set; }
         public int? Area { get; set; }
         public int? Duration { get; set; }
@@ -18,7 +18,8 @@ namespace FreedomApi.Models
         public DateTime? CreatedAt { get; set; }
         public int UserId { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public int EffectId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Player User { get; set; }
     }
 }

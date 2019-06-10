@@ -17,6 +17,6 @@ namespace FreedomApi.Models
         public int PartyId { get; set; }
 
         public virtual Party Party { get; set; }
-        public virtual User User { get; set; }
+        public virtual Player User { get; set; }
     }
 }

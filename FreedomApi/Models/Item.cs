@@ -15,6 +15,6 @@ namespace FreedomApi.Models
         public int CharacterId { get; set; }
         public int UserId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Player User { get; set; }
     }
 }

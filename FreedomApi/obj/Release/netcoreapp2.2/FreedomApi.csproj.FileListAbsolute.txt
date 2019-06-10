@@ -1,0 +1,14 @@
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Release\netcoreapp2.2\FreedomApi.deps.json
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Release\netcoreapp2.2\FreedomApi.runtimeconfig.json
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Release\netcoreapp2.2\FreedomApi.runtimeconfig.dev.json
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Release\netcoreapp2.2\FreedomApi.dll
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Release\netcoreapp2.2\FreedomApi.pdb
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.csproj.CoreCompileInputs.cache
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.RazorAssemblyInfo.cache
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.RazorAssemblyInfo.cs
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.AssemblyInfoInputs.cache
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.AssemblyInfo.cs
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.RazorTargetAssemblyInfo.cache
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.dll
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.pdb
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Release\netcoreapp2.2\FreedomApi.csprojAssemblyReference.cache

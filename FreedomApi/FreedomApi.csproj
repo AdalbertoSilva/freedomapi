@@ -8,16 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Devart.Data" Version="5.0.2149" />
+    <PackageReference Include="Devart.Data.MySql" Version="8.12.1357" />
+    <PackageReference Include="Devart.Data.MySql.EFCore" Version="8.12.1357" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.2">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.15" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="8.0.15" />
+    <PackageReference Include="MySqlConnector" Version="0.51.1" />
   </ItemGroup>
 
 </Project>
