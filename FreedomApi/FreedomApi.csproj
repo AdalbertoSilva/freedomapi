@@ -5,6 +5,8 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <UserSecretsId>27695dc8-1fee-4946-b260-493b0e9f1039</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/f9b09015-c0fb-412f-8e9b-86f0035e0a32/resourcegroups/freedomrpg/providers/microsoft.insights/components/freedomrpg</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/f9b09015-c0fb-412f-8e9b-86f0035e0a32/resourcegroups/freedomrpg/providers/microsoft.insights/components/freedomrpg</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
     <PackageReference Include="Devart.Data.MySql" Version="8.12.1357" />
     <PackageReference Include="Devart.Data.MySql.EFCore" Version="8.12.1357" />
     <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.7.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
@@ -24,6 +27,10 @@
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.15" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="8.0.15" />
     <PackageReference Include="MySqlConnector" Version="0.51.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
