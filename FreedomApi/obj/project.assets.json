@@ -14518,11 +14518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AdalS\\source\\repos\\FreedomApi\\FreedomApi\\FreedomApi.csproj",
+      "projectUniqueName": "C:\\Users\\AdalS\\source\\repos\\FreedomAPI\\FreedomApi\\FreedomApi.csproj",
       "projectName": "FreedomApi",
-      "projectPath": "C:\\Users\\AdalS\\source\\repos\\FreedomApi\\FreedomApi\\FreedomApi.csproj",
+      "projectPath": "C:\\Users\\AdalS\\source\\repos\\FreedomAPI\\FreedomApi\\FreedomApi.csproj",
       "packagesPath": "C:\\Users\\AdalS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AdalS\\source\\repos\\FreedomApi\\FreedomApi\\obj\\",
+      "outputPath": "C:\\Users\\AdalS\\source\\repos\\FreedomAPI\\FreedomApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
