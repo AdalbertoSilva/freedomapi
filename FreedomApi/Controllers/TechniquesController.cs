@@ -25,7 +25,10 @@ namespace FreedomApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Techniques>>> GetTechniques()
         {
-            return await _context.Techniques.ToListAsync();
+            var techniquesList = await _context.Techniques.ToListAsync();
+
+            techniquesList.ForEach(async t => t.Skills = await _context.Skills.FindAsync(t.SkillId));
+            return techniquesList;
         }
 
         // GET: api/Techniques/5
@@ -38,6 +41,8 @@ namespace FreedomApi.Controllers
             {
                 return NotFound();
             }
+
+            techniques.Skills = await _context.Skills.FindAsync(techniques.SkillId);
 
             return techniques;
         }

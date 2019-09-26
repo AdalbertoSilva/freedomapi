@@ -408,7 +408,7 @@ namespace FreedomApi.Data
 
             modelBuilder.Entity<Skills>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.UserId })
+                entity.HasKey(e => new { e.Id })
                     .HasName("PRIMARY");
 
                 entity.ToTable("skills");
@@ -618,10 +618,13 @@ namespace FreedomApi.Data
 
             modelBuilder.Entity<Techniques>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.UserId })
+                entity.HasKey(e => new { e.Id })
                     .HasName("PRIMARY");
 
                 entity.ToTable("techniques");
+
+                entity.HasIndex(e => e.SkillId)
+                    .HasName("fk_TECHNIQUE_has_SKILL_SKILL1_idx");
 
                 entity.HasIndex(e => e.UserId)
                     .HasName("fk_TECHNIQUE_USER1_idx");
@@ -682,11 +685,20 @@ namespace FreedomApi.Data
                     .HasColumnName("effect_id")
                     .HasColumnType("int(11)");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Techniques)
-                    .HasForeignKey(d => d.UserId)
+                entity.Property(e => e.SkillId)
+                    .HasColumnName("skill_id")
+                    .HasColumnType("int(11)");
+
+                //entity.HasOne(d => d.User)
+                //    .WithMany(p => p.Techniques)
+                //    .HasForeignKey(d => d.UserId)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("fk_TECHNIQUE_USER1");
+
+                entity.HasOne(e => e.Skills)
+                    .WithMany().HasForeignKey(d => d.SkillId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_TECHNIQUE_USER1");
+                    .HasConstraintName("fk_TECHNIQUE_SKILL1");
             });
 
             modelBuilder.Entity<PlayerParty>(entity =>

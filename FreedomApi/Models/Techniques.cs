@@ -19,7 +19,9 @@ namespace FreedomApi.Models
         public int UserId { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public int EffectId { get; set; }
+        public int SkillId { get; set; }
 
         public virtual Player User { get; set; }
+        public virtual Skills Skills { get; set; }
     }
 }

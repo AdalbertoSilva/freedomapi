@@ -17,6 +17,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "Techniques(IIS)": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/techniques",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
     "FreedomApi": {
       "commandName": "Project",
       "launchBrowser": true,
