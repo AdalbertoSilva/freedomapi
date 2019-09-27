@@ -12,3 +12,4 @@ C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Debug\netcoreapp2.2\Freedo
 C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Debug\netcoreapp2.2\FreedomApi.dll
 C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Debug\netcoreapp2.2\FreedomApi.pdb
 C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\bin\Debug\netcoreapp2.2\app.yaml
+C:\Users\AdalS\source\repos\FreedomAPI\FreedomApi\obj\Debug\netcoreapp2.2\FreedomApi.csprojAssemblyReference.cache
