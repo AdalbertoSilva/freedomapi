@@ -31,7 +31,7 @@ namespace FreedomApi
 
             services.AddDbContext<FreedomContext>(options =>
 
-        options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -49,7 +49,7 @@ namespace FreedomApi
                 app.UseHsts();
             }
 
-            app.UseCors(option => option.AllowAnyOrigin());
+            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod());
 
             app.UseHttpsRedirection();
             app.UseMvc();
